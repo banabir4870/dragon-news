@@ -4,6 +4,11 @@ import RightSidebar from "@/components/homepage/news/RightSidebar";
 import { getCategories, getNewsByCategoryID } from '@/lib/dataFetch';
 import NewsCard from '@/components/homepage/news/NewsCard';
 
+export const metadata = {
+  title: "Dragon News || Category",
+  description: "Best News Portal In Bangladesh",
+};
+
 
 
 

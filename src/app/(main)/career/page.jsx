@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Dragon News || Career",
+  description: "Best News Portal In Bangladesh",
+};
+
 const CareerPage = () => {
     return (
         <div className='w-10/12 mx-auto text-center h-[40vh] flex justify-center items-center'>
