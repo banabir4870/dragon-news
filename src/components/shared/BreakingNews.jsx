@@ -18,11 +18,11 @@ const news = [
 
 const BreakingNews = () => {
     return (
-        <div className='flex w-10/12 mx-auto bg-gray-200 p-2 rounded-xl'>
+        <div className='flex w-10/12 mx-auto bg-gray-200 p-2 rounded-xl mt-6'>
             <button className='btn btn-secondary'>Latest:</button>
             <Marquee pauseOnHover speed={80}>
                 {
-                    news.map(n=> <p key={n._id}>{n.title}</p>)
+                    news.map(n=> <p key={n._id}>| {n.title} |</p>)
                 }
             </Marquee>
         </div>
