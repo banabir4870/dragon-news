@@ -11,7 +11,7 @@ import { IoEyeOutline } from 'react-icons/io5';
 const LogInPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const handleLogin = async (data) => {
-        const {email, password} = data;
+        const { email, password } = data;
         console.log('data: ', data)
         const { data: res, error } = await authClient.signIn.email({
             email: email,
@@ -20,6 +20,14 @@ const LogInPage = () => {
             callbackURL: "/",
         });
         console.log(res, error);
+
+        if (error) {
+            alert(error.message)
+        }
+
+        if (res) {
+            alert('Login Successfully')
+        }
     }
 
     const [isShowPassword, setIsShowPassword] = useState(false)
@@ -37,7 +45,7 @@ const LogInPage = () => {
                         <div className='space-y-2 relative'>
                             <label className="label font-semibold text-xl">Password</label>
                             <input {...register("password", { required: 'password is required' })} type={isShowPassword ? "text" : "password"} className="input w-full bg-[#F3F3F3] p-5 border-none" placeholder="Enter Your Password" />
-                            <span onClick={()=> setIsShowPassword(!isShowPassword)} className='absolute right-4 top-11'>{isShowPassword ? <FaRegEyeSlash className='text-2xl' /> : <IoEyeOutline className='text-2xl' />}</span>
+                            <span onClick={() => setIsShowPassword(!isShowPassword)} className='absolute right-4 top-11'>{isShowPassword ? <FaRegEyeSlash className='text-2xl' /> : <IoEyeOutline className='text-2xl' />}</span>
                             {errors.password && <p className='text-red-400'>{errors.password.message}</p>}
                         </div>
                         <button className="btn btn-neutral mt-4">Login</button>
