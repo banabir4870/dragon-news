@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 
+
+
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
